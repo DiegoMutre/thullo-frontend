@@ -30,7 +30,7 @@ export const Navbar = () => {
         <div className='flex items-center gap-2'>
           <Image
             className='rounded-lg'
-            src='/sample-avatar.jpg'
+            src='/sample_img/sample-avatar.jpg'
             alt='user-avatar'
             width={32}
             height={32}
