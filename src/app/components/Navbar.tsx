@@ -1,4 +1,6 @@
+import { notoSans } from '@/app/utils/fonts';
 import Image from 'next/image';
+import { MdOutlineArrowDropDown } from 'react-icons/md';
 
 export const Navbar = () => {
   return (
@@ -10,7 +12,7 @@ export const Navbar = () => {
         height={96}
         className='cursor-pointer'
       />
-      <div className='flex gap-12'>
+      <div className='flex gap-12 items-center'>
         {/* For now using an arbitrary value for the shadow */}
         <form className='rounded-lg shadow-[0_4px_12px_rgb(0,0,0,0.10)]'>
           <input
@@ -25,10 +27,22 @@ export const Navbar = () => {
             Search
           </button>
         </form>
-        <div>
-          {/* TODO User avatar here */}
-          <span>Username</span>
-          <button>Dropdown toggle button</button>
+        <div className='flex items-center gap-2'>
+          <Image
+            className='rounded-lg'
+            src='/sample-avatar.jpg'
+            alt='user-avatar'
+            width={32}
+            height={32}
+          />
+          <span
+            className={`text-[#333] font-bold text-sm ${notoSans.className}`}
+          >
+            Xanthe Neal
+          </span>
+          <button>
+            <MdOutlineArrowDropDown />
+          </button>
         </div>
       </div>
     </nav>
