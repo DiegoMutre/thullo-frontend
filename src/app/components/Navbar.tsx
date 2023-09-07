@@ -4,7 +4,7 @@ import { MdOutlineArrowDropDown } from 'react-icons/md';
 
 export const Navbar = () => {
   return (
-    <nav className='flex justify-between py-6 px-6 shadow-[0_2px_2px_0_rgba(0,0,0,0.05)]'>
+    <nav className='flex justify-between py-6 px-6 bg-white shadow-[0_2px_2px_0_rgba(0,0,0,0.05)]'>
       <Image
         src={'/Logo.svg'}
         alt='logo'
