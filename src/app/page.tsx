@@ -1,6 +1,5 @@
-import { Navbar } from '@/app/components';
+import { AddBoardButton, CreateBoardPopup, Navbar } from '@/app/components';
 import Image from 'next/image';
-import { MdAdd } from 'react-icons/md';
 
 const exampleBoards = [
   {
@@ -37,16 +36,13 @@ export default function Home() {
       <main className='mt-16 mb-8 w-3/4 mx-auto'>
         <div className='flex justify-between items-center mb-10'>
           <h2 className='text-[#333] font-medium capitalize'>All boards</h2>
-          {/* The styles of this button seem to be repeating, likely will be moved to its own reusable component */}
-          <button className='flex gap-1 items-center font-medium py-2 px-4 rounded-lg bg-blue-600 text-white'>
-            <MdAdd /> Add
-          </button>
+          <AddBoardButton />
         </div>
         <div className='grid grid-cols-4 gap-10'>
           {exampleBoards.map(exampleBoard => (
             <div
               key={exampleBoard.id}
-              className='flex flex-col gap-4 bg-white p-4 rounded-2xl shadow-[0_4px_12px_rgb(0,0,0,0.10)]'
+              className='flex flex-col gap-4 bg-white p-4 rounded-2xl shadow-md'
             >
               <Image
                 className='rounded-lg'
@@ -82,10 +78,11 @@ export default function Home() {
             </div>
           ))}
         </div>
-        <span className='mt-10 text-[#bdbdbd] flex justify-center'>
+        <span className='mt-10 text-gray4 flex justify-center'>
           &copy;{new Date().getFullYear()} Diego Mutre, devchallenges.io
         </span>
       </main>
+      <CreateBoardPopup />
     </>
   );
 }
