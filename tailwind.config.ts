@@ -15,6 +15,11 @@ const config: Config = {
         gray3: '#828282',
         gray4: '#bdbdbd',
       },
+      // Actually this overrides the default values 😯, maybe I can use it later for the colors above
+      boxShadow: {
+        sm: '0 2px 2px rgba(0,0,0,0.05)',
+        md: '0 4px 12px rgba(0,0,0,0.10)',
+      },
     },
   },
   plugins: [],
