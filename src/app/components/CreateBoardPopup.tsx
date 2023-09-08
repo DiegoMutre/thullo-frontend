@@ -5,11 +5,11 @@ export const CreateBoardPopup = ({ show = false }: { show?: boolean }) => {
   if (show) {
     return (
       <>
-        <div className='absolute top-1/4 left-1/2 -translate-x-1/2 w-auto h-auto bg-white rounded-lg shadow-sm z-20'>
+        <div className='absolute left-1/2 top-1/4 z-20 h-auto w-auto -translate-x-1/2 rounded-lg bg-white shadow-sm'>
           {/* Cover Image here */}
           <form className='flex flex-col gap-6 p-6'>
             <input
-              className='border border-gray2 rounded-lg py-2 px-4 placeholder:text-gray4 placeholder:font-medium placeholder:text-sm outline-none '
+              className='rounded-lg border border-gray2 px-4 py-2 outline-none placeholder:text-sm placeholder:font-medium placeholder:text-gray4 '
               type='text'
               placeholder='Add board title'
             />
@@ -21,7 +21,7 @@ export const CreateBoardPopup = ({ show = false }: { show?: boolean }) => {
                 <MdLock /> Private
               </Button>
             </div>
-            <div className='flex gap-4 items-center justify-end'>
+            <div className='flex items-center justify-end gap-4'>
               <button className='text-gray3'>Cancel</button>
               <Button variant='primary'>
                 <MdAdd /> Create
@@ -31,7 +31,7 @@ export const CreateBoardPopup = ({ show = false }: { show?: boolean }) => {
         </div>
         {/* The semi-transparent background of the popup */}
         {/* I think there could be better approaches for this, but I'm gonna keep this for a while */}
-        <div className='w-full h-full z-10 top-0 left-0 bg-[rgba(0,0,0,0.1)] fixed'></div>
+        <div className='fixed left-0 top-0 z-10 h-full w-full bg-[rgba(0,0,0,0.1)]'></div>
       </>
     );
   }

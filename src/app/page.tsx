@@ -33,16 +33,16 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main className='mt-16 mb-8 w-3/4 mx-auto'>
-        <div className='flex justify-between items-center mb-10'>
-          <h2 className='text-[#333] font-medium capitalize'>All boards</h2>
+      <main className='mx-auto mb-8 mt-16 w-3/4'>
+        <div className='mb-10 flex items-center justify-between'>
+          <h2 className='font-medium capitalize text-[#333]'>All boards</h2>
           <AddBoardButton />
         </div>
         <div className='grid grid-cols-4 gap-10'>
           {exampleBoards.map(exampleBoard => (
             <div
               key={exampleBoard.id}
-              className='flex flex-col gap-4 bg-white p-4 rounded-2xl shadow-md'
+              className='flex flex-col gap-4 rounded-2xl bg-white p-4 shadow-md'
             >
               <Image
                 className='rounded-lg'
@@ -78,7 +78,7 @@ export default function Home() {
             </div>
           ))}
         </div>
-        <span className='mt-10 text-gray4 flex justify-center'>
+        <span className='mt-10 flex justify-center text-gray4'>
           &copy;{new Date().getFullYear()} Diego Mutre, devchallenges.io
         </span>
       </main>

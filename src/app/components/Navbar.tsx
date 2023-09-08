@@ -5,7 +5,7 @@ import { MdOutlineArrowDropDown } from 'react-icons/md';
 
 export const Navbar = () => {
   return (
-    <nav className='flex justify-between py-6 px-6 bg-white shadow-sm'>
+    <nav className='flex justify-between bg-white px-6 py-6 shadow-sm'>
       <Image
         src={'/Logo.svg'}
         alt='logo'
@@ -13,14 +13,18 @@ export const Navbar = () => {
         height={96}
         className='cursor-pointer'
       />
-      <div className='flex gap-12 items-center'>
-        <form className='rounded-lg flex shadow-md'>
+      <div className='flex items-center gap-12'>
+        <form className='flex rounded-lg shadow-md'>
           <input
-            className='outline-none py-2 px-4 rounded-lg placeholder:text-gray4 placeholder:text-sm placeholder:font-medium'
+            className='rounded-lg px-4 py-2 outline-none placeholder:text-sm placeholder:font-medium placeholder:text-gray4'
             type='search'
             placeholder='Keyword...'
           />
-          <Button className='text-sm' variant='primary' type='submit'>
+          <Button
+            className='text-sm'
+            variant='primary'
+            type='submit'
+          >
             Search
           </Button>
         </form>
@@ -33,7 +37,7 @@ export const Navbar = () => {
             height={32}
           />
           <span
-            className={`text-[#333] font-bold text-sm ${notoSans.className}`}
+            className={`text-sm font-bold text-[#333] ${notoSans.className}`}
           >
             Xanthe Neal
           </span>
