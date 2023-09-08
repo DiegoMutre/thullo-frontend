@@ -16,7 +16,7 @@ export const Navbar = () => {
       <div className='flex gap-12 items-center'>
         <form className='rounded-lg flex shadow-md'>
           <input
-            className='outline-none py-2 px-4 rounded-lg'
+            className='outline-none py-2 px-4 rounded-lg placeholder:text-gray4 placeholder:text-sm placeholder:font-medium'
             type='search'
             placeholder='Keyword...'
           />
