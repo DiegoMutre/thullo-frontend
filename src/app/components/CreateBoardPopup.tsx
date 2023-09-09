@@ -1,5 +1,6 @@
-import { Button } from '@/app/components';
 import { MdAdd, MdImage, MdLock } from 'react-icons/md';
+
+import { Button } from '@/app/components';
 
 export const CreateBoardPopup = ({ show = false }: { show?: boolean }) => {
   if (show) {

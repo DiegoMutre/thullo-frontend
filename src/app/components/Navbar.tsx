@@ -1,7 +1,8 @@
-import { Button } from '@/app/components';
-import { notoSans } from '@/app/utils/fonts';
 import Image from 'next/image';
 import { MdOutlineArrowDropDown } from 'react-icons/md';
+
+import { Button } from '@/app/components';
+import { notoSans } from '@/app/utils/fonts';
 
 export const Navbar = () => {
   return (

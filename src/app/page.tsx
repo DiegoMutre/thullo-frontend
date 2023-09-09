@@ -1,5 +1,6 @@
-import { AddBoardButton, CreateBoardPopup, Navbar } from '@/app/components';
 import Image from 'next/image';
+
+import { AddBoardButton, CreateBoardPopup, Navbar } from '@/app/components';
 
 const exampleBoards = [
   {
