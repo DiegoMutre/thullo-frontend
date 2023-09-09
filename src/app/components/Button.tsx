@@ -2,7 +2,7 @@ import { ButtonHTMLAttributes } from 'react';
 
 // The styles used by default in most buttons
 const defaultBtnStyles =
-  'py-2 px-4 rounded-lg font-medium gap-1 flex items-center';
+  'py-2 px-4 rounded-lg font-medium gap-1 flex items-center justify-center';
 
 // Styles added per variant
 const variantsStyles = {
