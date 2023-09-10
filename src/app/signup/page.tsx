@@ -1,9 +1,14 @@
 import Image from 'next/image';
 import { MdEmail, MdLock, MdPerson } from 'react-icons/md';
 import Link from 'next/link';
+import { Metadata } from 'next';
 
 import { Button, TextField } from '@/app/components';
 import { notoSans } from '@/app/utils/fonts';
+
+export const metadata: Metadata = {
+  title: 'Signup Thullo',
+};
 
 const SignupPage = () => {
   return (
