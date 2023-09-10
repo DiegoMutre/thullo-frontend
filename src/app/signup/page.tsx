@@ -1,10 +1,9 @@
 import Image from 'next/image';
-import { MdEmail, MdLock, MdPerson } from 'react-icons/md';
 import Link from 'next/link';
 import { Metadata } from 'next';
 
-import { Button, TextField } from '@/app/components';
 import { notoSans } from '@/app/utils/fonts';
+import { SignupForm } from '@/app/signup/components/SignupForm';
 
 export const metadata: Metadata = {
   title: 'Signup Thullo',
@@ -19,30 +18,15 @@ const SignupPage = () => {
           alt='logo'
           height={88}
           width={88}
+          // `priority` because it's one the largest contentful paint (LCP)
+          priority
         />
         <h2
           className={`text-xl font-semibold text-[#333] ${notoSans.className}`}
         >
           Join Thullo
         </h2>
-        <form className='flex flex-col gap-4'>
-          <TextField
-            leftIcon={<MdPerson />}
-            type='text'
-            placeholder='Username'
-          />
-          <TextField
-            leftIcon={<MdEmail />}
-            type='email'
-            placeholder='Email'
-          />
-          <TextField
-            leftIcon={<MdLock />}
-            type='password'
-            placeholder='Password'
-          />
-          <Button variant='primary'>Login</Button>
-        </form>
+        <SignupForm />
         <span className='text-center'>
           Already have an account?{' '}
           <Link
