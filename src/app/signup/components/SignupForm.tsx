@@ -105,7 +105,7 @@ export const SignupForm = () => {
         type='submit'
         variant='primary'
       >
-        Login
+        Create account
       </Button>
       {serverErrorMsg ? (
         <span className='text-red-400'>{serverErrorMsg}</span>
