@@ -38,7 +38,9 @@ export const SignupForm = () => {
     mutationFn: async (data: Inputs) => {
       // Delete the previous server error
       setServerErrorMsg(null);
-      return await axios.post('http://localhost:4000/api/auth/signup', data);
+      return await axios.post('http://localhost:4000/api/auth/signup', data, {
+        withCredentials: true, // Allows to receive cookies, see https://stackoverflow.com/questions/36824106/express-doesnt-set-a-cookie
+      });
     },
   });
 
