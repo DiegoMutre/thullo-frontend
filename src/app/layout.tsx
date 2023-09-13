@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { ReactNode } from 'react';
 
 import { poppins } from '@/app/utils/fonts';
+import { Providers } from '@/app/providers';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -15,7 +16,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       lang='en'
       className={poppins.className}
     >
-      <body className='bg-[#F8F9FD]'>{children}</body>
+      <body className='bg-[#F8F9FD]'>
+        {/* I'm not sure if the entire app is now a client component because the `Providers` component is one of them */}
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }
