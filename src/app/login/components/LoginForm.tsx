@@ -19,7 +19,6 @@ const schema = yup.object({
 type LoginInputs = yup.InferType<typeof schema>;
 
 export const LoginForm = () => {
-  // TODO Implement validation
   const { register } = useForm<LoginInputs>();
 
   return (
