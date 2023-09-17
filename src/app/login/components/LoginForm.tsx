@@ -20,7 +20,11 @@ const schema = yup.object({
 type LoginInputs = yup.InferType<typeof schema>;
 
 export const LoginForm = () => {
-  const { register, handleSubmit } = useForm<LoginInputs>({
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<LoginInputs>({
     resolver: yupResolver(schema),
   });
 
@@ -38,12 +42,14 @@ export const LoginForm = () => {
         leftIcon={<MdEmail />}
         type='email'
         placeholder='Email'
+        errorMessage={errors.email?.message}
         {...register('email')}
       />
       <TextField
         leftIcon={<MdLock />}
         type='password'
         placeholder='Password'
+        errorMessage={errors.password?.message}
         {...register('password')}
       />
       <Button
