@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { notoSans } from '@/app/utils/fonts';
+import { LoginForm } from '@/app/login/components/LoginForm';
 
 const LoginPage = () => {
   return (
@@ -19,7 +20,7 @@ const LoginPage = () => {
         >
           Login
         </h2>
-        {/* Login form here */}
+        <LoginForm />
         <span className='text-center'>
           Don&apos;t have an account?{' '}
           <Link
