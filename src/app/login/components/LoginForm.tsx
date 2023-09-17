@@ -1,7 +1,8 @@
 'use client';
 import { MdEmail, MdLock } from 'react-icons/md';
-import { useForm } from 'react-hook-form';
+import { SubmitHandler, useForm } from 'react-hook-form';
 import * as yup from 'yup';
+import { yupResolver } from '@hookform/resolvers/yup';
 
 import { Button, TextField } from '@/app/components';
 
@@ -19,10 +20,20 @@ const schema = yup.object({
 type LoginInputs = yup.InferType<typeof schema>;
 
 export const LoginForm = () => {
-  const { register } = useForm<LoginInputs>();
+  const { register, handleSubmit } = useForm<LoginInputs>({
+    resolver: yupResolver(schema),
+  });
+
+  const onSubmit: SubmitHandler<LoginInputs> = data => {
+    // TODO Send request to the api
+    console.log('Sending data...', data);
+  };
 
   return (
-    <form className='flex flex-col gap-4'>
+    <form
+      className='flex flex-col gap-4'
+      onSubmit={handleSubmit(onSubmit)}
+    >
       <TextField
         leftIcon={<MdEmail />}
         type='email'
