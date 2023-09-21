@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Metadata } from 'next';
+import { getServerSession } from 'next-auth';
+import { redirect } from 'next/navigation';
 
 import { notoSans } from '@/app/utils/fonts';
 import { SignupForm } from '@/app/signup/components/SignupForm';
@@ -9,7 +11,12 @@ export const metadata: Metadata = {
   title: 'Signup Thullo',
 };
 
-const SignupPage = () => {
+const SignupPage = async () => {
+  const session = await getServerSession();
+
+  // If the user is already logged in, redirect to the app page
+  if (session) redirect('/app');
+
   return (
     <main className='flex h-screen items-center'>
       <div className='mx-auto flex w-1/3 flex-col gap-6 rounded-3xl border border-gray4 bg-white px-12 py-10'>
