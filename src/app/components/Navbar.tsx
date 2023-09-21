@@ -1,10 +1,12 @@
 import Image from 'next/image';
 import { MdOutlineArrowDropDown } from 'react-icons/md';
+import { getServerSession } from 'next-auth/next';
 
 import { Button } from '@/app/components';
 import { notoSans } from '@/app/utils/fonts';
 
-export const Navbar = () => {
+export const Navbar = async () => {
+  const session = await getServerSession();
   return (
     <nav className='flex justify-between bg-white px-6 py-6 shadow-sm'>
       <Image
@@ -40,7 +42,7 @@ export const Navbar = () => {
           <span
             className={`text-sm font-bold text-[#333] ${notoSans.className}`}
           >
-            Xanthe Neal
+            {session?.user?.name}
           </span>
           <button>
             <MdOutlineArrowDropDown />
